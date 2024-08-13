@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../Redux/store";
 import { NavBarItems } from "@/Interfaces/interfaces";
 import AccordionDemo from "./Accordion";
+import FileIcon from "./FileIcon";
+import FolderIcon from "./FolderIcon";
 function getAllFilesAndFolders(Files: NavBarItems[]) {
   return (
     <>
@@ -19,7 +21,7 @@ function getAllFilesAndFolders(Files: NavBarItems[]) {
             >
               <li>
                 <div className="flex items-center space-x-1 cursor-pointer text-lg">
-                  {file.icon}
+                  <FolderIcon name={file.title}/>
                   <span className="select-none">{file.title}</span>
                 </div>
               </li>
@@ -27,7 +29,7 @@ function getAllFilesAndFolders(Files: NavBarItems[]) {
           ) : (
             <li>
               <div className="flex items-center space-x-1 cursor-pointer text-lg">
-                {file.icon}
+                <FileIcon name={`${file.title}`}/>
                 <span className="select-none">{file.title}</span>
               </div>
             </li>

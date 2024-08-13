@@ -1,28 +1,21 @@
 import { NavBarItems } from "@/Interfaces/interfaces";
 import { createSlice } from "@reduxjs/toolkit";
-import { FileCodeIcon, FolderCode } from "lucide-react";
-import React from "react";
-const size = { size: 20 };
 const initialState: NavBarItems[] = [
   {
     title: "VScode Clone",
     isFolder: true,
-    icon: React.createElement(FolderCode, size),
     children: [
       {
         title: "node_modules",
         isFolder: true,
-        icon: React.createElement(FolderCode, size),
         children: [
           {
             title: "Vite",
             isFolder: true,
-            icon: React.createElement(FolderCode, size),
             children: [
               {
                 title: "index.js",
                 isFolder: false,
-                icon: React.createElement(FileCodeIcon, size),
                 children: null,
               },
             ],
@@ -30,7 +23,62 @@ const initialState: NavBarItems[] = [
           {
             title: "index.ts",
             isFolder: false,
-            icon: React.createElement(FileCodeIcon, size),
+            children: null,
+          },
+        ],
+      },
+      {
+        title: "src",
+        isFolder: true,
+        children: [
+          {
+            title: "assets",
+            isFolder: true,
+            children: null,
+          },
+          {
+            title: "components",
+            isFolder: true,
+            children: null,
+          },
+          {
+            title: "interfaces",
+            isFolder: true,
+            children: null,
+          },
+          {
+            title: "layouts",
+            isFolder: true,
+            children: null,
+          },
+          {
+            title: "Redux",
+            isFolder: true,
+            children: null,
+          },
+          {
+            title: "Routers",
+            isFolder: true,
+            children: null,
+          },
+          {
+            title: "App.css",
+            isFolder: false,
+            children: null,
+          },
+          {
+            title: "App.tsx",
+            isFolder: false,
+            children: null,
+          },
+          {
+            title: "index.css",
+            isFolder: false,
+            children: null,
+          },
+          {
+            title: "index.tsx",
+            isFolder: false,
             children: null,
           },
         ],
@@ -38,13 +86,31 @@ const initialState: NavBarItems[] = [
       {
         title: "index.html",
         isFolder: false,
-        icon: React.createElement(FileCodeIcon, size),
         children: null,
       },
       {
         title: "index.ts",
         isFolder: false,
-        icon: React.createElement(FileCodeIcon, size),
+        children: null,
+      },
+      {
+        title: "index.css",
+        isFolder: false,
+        children: null,
+      },
+      {
+        title: "index.py",
+        isFolder: false,
+        children: null,
+      },
+      {
+        title: "index.cpp",
+        isFolder: false,
+        children: null,
+      },
+      {
+        title: "index.txt",
+        isFolder: false,
         children: null,
       },
     ],
@@ -56,20 +122,3 @@ export const files = createSlice({
   reducers: {},
 });
 export default files.reducer;
-// import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-// const initialState: YourInterface = {
-//   value: "",
-// };
-// export const files = createSlice({
-//   name: "Name",
-//   initialState,
-//   reducers: {
-//     changeName: (state, action: PayloadAction<string>) => {
-//       state.value = action.payload;
-//     },
-//   },
-// });
-
-// export const { changeName } = files.actions;
-// export default files.reducer;
