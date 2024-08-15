@@ -5,7 +5,13 @@ import FileIcon from "./FileIcon";
 import FolderIcon from "./FolderIcon";
 import { setOpenFiles } from "@/Redux/files";
 
-function Recarsive({ fileChildren }: { fileChildren: FilesAndFolder[] }) {
+function Recarsive({
+  fileChildren,
+  openFiles,
+}: {
+  fileChildren: FilesAndFolder[];
+  openFiles: FilesAndFolder[];
+}) {
   const dispatch = useDispatch();
   return (
     <>
@@ -16,7 +22,10 @@ function Recarsive({ fileChildren }: { fileChildren: FilesAndFolder[] }) {
               content={
                 <span className={`block ml-3`}>
                   {file.isFolder && file.children ? (
-                    <Recarsive fileChildren={file.children} />
+                    <Recarsive
+                      fileChildren={file.children}
+                      openFiles={openFiles}
+                    />
                   ) : (
                     ""
                   )}
@@ -31,7 +40,12 @@ function Recarsive({ fileChildren }: { fileChildren: FilesAndFolder[] }) {
               </li>
             </AccordionDemo>
           ) : (
-            <li onClick={() => dispatch(setOpenFiles(file))}>
+            <li
+              onClick={() => {
+                if (openFiles.includes(file)) return "";
+                dispatch(setOpenFiles(file));
+              }}
+            >
               <div className="flex items-center space-x-1 cursor-pointer text-lg">
                 <FileIcon name={`${file.title}`} />
                 <span className="select-none">{file.title}</span>

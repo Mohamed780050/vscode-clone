@@ -1,10 +1,11 @@
 export interface NavBarItems {
   Myfiles: FilesAndFolder[];
-  openfolder: FilesAndFolder[] | [];
+  openFiles: FilesAndFolder[] | [];
   content: string;
 }
 
 export interface FilesAndFolder {
+  id: number;
   title: string;
   isFolder: boolean;
   children: FilesAndFolder[] | null;
