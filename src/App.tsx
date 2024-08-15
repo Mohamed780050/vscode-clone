@@ -1,7 +1,13 @@
-import { RouterProvider } from "react-router-dom";
-import routes from "./Routers/Router";
+import Content from "@/components/Content";
+import MainLayout from "./Layouts/MainLayout";
 function App() {
-  return <RouterProvider router={routes} />;
+  return (
+    <>
+      <MainLayout>
+        <Content />
+      </MainLayout>
+    </>
+  );
 }
 
 export default App;

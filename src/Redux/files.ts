@@ -48,7 +48,9 @@ const initialState: NavBarItems = {
             {
               title: "interfaces",
               isFolder: true,
-              children: null,
+              children: [
+                { title: "interfase.ts", isFolder: false, children: null },
+              ],
             },
             {
               title: "layouts",
