@@ -1,7 +1,7 @@
 export interface NavBarItems {
   Myfiles: FilesAndFolder[];
   openFiles: FilesAndFolder[] | [];
-  content: string;
+  selectedFile: FilesAndFolder[];
 }
 
 export interface FilesAndFolder {
@@ -9,4 +9,5 @@ export interface FilesAndFolder {
   title: string;
   isFolder: boolean;
   children: FilesAndFolder[] | null;
+  content?: string;
 }
