@@ -14,7 +14,7 @@ function Remover({ file }: { file: FilesAndFolder }) {
     <div className="ml-3 opacity-75">
       <X
         size={15}
-        className="absolute centralized"
+        className="absolute centralized cursor-pointer"
         onClick={() => {
           dispatch(removeFormOpenFiles(OpenFiles));
           if (selectedFile.includes(file)) dispatch(removeSelectedFile([]));

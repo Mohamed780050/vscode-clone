@@ -3,7 +3,7 @@ import AccordionDemo from "./Accordion";
 import { FilesAndFolder } from "@/Interfaces/interfaces";
 import FileIcon from "./FileIcon";
 import FolderIcon from "./FolderIcon";
-import { setOpenFiles } from "@/Redux/files";
+import { setOpenFiles, setSelectedFile } from "@/Redux/files";
 
 function Recarsive({
   fileChildren,
@@ -42,6 +42,7 @@ function Recarsive({
           ) : (
             <li
               onClick={() => {
+                dispatch(setSelectedFile(file))
                 if (openFiles.includes(file)) return "";
                 dispatch(setOpenFiles(file));
               }}
