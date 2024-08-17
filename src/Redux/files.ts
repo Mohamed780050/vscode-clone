@@ -23,7 +23,7 @@ const initialState: NavBarItems = {
                   title: "index.js",
                   isFolder: false,
                   children: null,
-                  content:`console.log("Working")`
+                  content: `console.log("Working")`,
                 },
               ],
             },
@@ -88,9 +88,22 @@ const initialState: NavBarItems = {
           ],
         },
         { id: ++theID, title: "index.html", isFolder: false, children: null },
-        { id: ++theID, title: "index.ts", isFolder: false, children: null },
+        {
+          id: ++theID,
+          title: "index.ts",
+          isFolder: false,
+          children: null,
+          content: `console.log("Hello! World")`,
+        },
         { id: ++theID, title: "index.css", isFolder: false, children: null },
-        { id: ++theID, title: "index.py", isFolder: false, children: null },
+        {
+          id: ++theID,
+          title: "index.py",
+          isFolder: false,
+          children: null,
+          content: `print("Hello! World")
+          print("this is a second line")`,
+        },
         { id: ++theID, title: "index.cpp", isFolder: false, children: null },
         { id: ++theID, title: "index.txt", isFolder: false, children: null },
       ],
