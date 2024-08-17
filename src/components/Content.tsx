@@ -1,6 +1,9 @@
+import Tabs from "./Tabs";
 function Content() {
   return (
-    <div>Content</div>
+    <div className="w-full">
+      <Tabs/>
+    </div>
   );
 }
 export default Content;
