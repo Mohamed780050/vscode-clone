@@ -14,7 +14,7 @@ function Image({ extention }: ImageProps) {
     tsx: "react_ts",
   };
   return Object.prototype.hasOwnProperty.call(theEXet, extention) ? (
-    <img src={`/icons/${theEXet[extention]}.svg`} className="w-5 h-5" />
+    <img src={`/icons/${theEXet[extention]}.svg`} className="min-w-5 min-h-5" />
   ) : (
     <File size={20} />
   );

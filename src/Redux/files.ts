@@ -122,7 +122,14 @@ export const files = createSlice({
     setSelectedFile: (state, action: PayloadAction<FilesAndFolder>) => {
       state.selectedFile = [action.payload];
     },
+    removeFormOpenFiles: (state, action: PayloadAction<FilesAndFolder[]>) => {
+      state.openFiles = action.payload;
+    },
+    removeSelectedFile: (state, action: PayloadAction<FilesAndFolder[]>) => {
+      state.selectedFile = action.payload;
+    },
   },
 });
-export const { setOpenFiles, setSelectedFile } = files.actions;
+export const { setOpenFiles, setSelectedFile, removeFormOpenFiles,removeSelectedFile } =
+  files.actions;
 export default files.reducer;
