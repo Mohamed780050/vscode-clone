@@ -27,7 +27,13 @@ const initialState: NavBarItems = {
                 },
               ],
             },
-            { id: ++theID, title: "index.ts", isFolder: false, children: null },
+            {
+              id: ++theID,
+              title: "index.ts",
+              isFolder: false,
+              content: ``,
+              children: null,
+            },
           ],
         },
         {
@@ -45,12 +51,14 @@ const initialState: NavBarItems = {
                   id: ++theID,
                   title: "Button.tsx",
                   isFolder: false,
+                  content: ``,
                   children: null,
                 },
                 {
                   id: ++theID,
                   title: "Input.tsx",
                   isFolder: false,
+                  content: ``,
                   children: null,
                 },
               ],
@@ -64,6 +72,7 @@ const initialState: NavBarItems = {
                   id: ++theID,
                   title: "interfase.ts",
                   isFolder: false,
+                  content: ``,
                   children: null,
                 },
               ],
@@ -71,23 +80,55 @@ const initialState: NavBarItems = {
             { id: ++theID, title: "layouts", isFolder: true, children: null },
             { id: ++theID, title: "Redux", isFolder: true, children: null },
             { id: ++theID, title: "Routers", isFolder: true, children: null },
-            { id: ++theID, title: "App.css", isFolder: false, children: null },
-            { id: ++theID, title: "App.tsx", isFolder: false, children: null },
+            {
+              id: ++theID,
+              title: "App.css",
+              isFolder: false,
+              content: ``,
+              children: null,
+            },
+            {
+              id: ++theID,
+              title: "App.tsx",
+              isFolder: false,
+              content: ``,
+              children: null,
+            },
             {
               id: ++theID,
               title: "index.css",
               isFolder: false,
+              content: ``,
               children: null,
             },
             {
               id: ++theID,
               title: "index.tsx",
               isFolder: false,
+              content: ``,
               children: null,
             },
           ],
         },
-        { id: ++theID, title: "index.html", isFolder: false, children: null },
+        {
+          id: ++theID,
+          title: "index.html",
+          isFolder: false,
+          content: `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>`,
+          children: null,
+        },
         {
           id: ++theID,
           title: "index.ts",
@@ -95,17 +136,39 @@ const initialState: NavBarItems = {
           children: null,
           content: `console.log("Hello! World")`,
         },
-        { id: ++theID, title: "index.css", isFolder: false, children: null },
+        {
+          id: ++theID,
+          title: "index.css",
+          isFolder: false,
+          content: `.centralized {
+  top: 50%;
+  right: -1px;
+  transform: translate(-50%, -50%);
+}`,
+          children: null,
+        },
         {
           id: ++theID,
           title: "index.py",
           isFolder: false,
           children: null,
           content: `print("Hello! World")
-          print("this is a second line")`,
+print("this is a second line")`,
         },
-        { id: ++theID, title: "index.cpp", isFolder: false, children: null },
-        { id: ++theID, title: "index.txt", isFolder: false, children: null },
+        {
+          id: ++theID,
+          title: "index.cpp",
+          isFolder: false,
+          content: ``,
+          children: null,
+        },
+        {
+          id: ++theID,
+          title: "index.txt",
+          isFolder: false,
+          content: `this is a normal text file`,
+          children: null,
+        },
       ],
     },
   ],
@@ -130,6 +193,10 @@ export const files = createSlice({
     },
   },
 });
-export const { setOpenFiles, setSelectedFile, removeFormOpenFiles,removeSelectedFile } =
-  files.actions;
+export const {
+  setOpenFiles,
+  setSelectedFile,
+  removeFormOpenFiles,
+  removeSelectedFile,
+} = files.actions;
 export default files.reducer;

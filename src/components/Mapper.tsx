@@ -15,7 +15,7 @@ function Mapper({ file }: { file: FilesAndFolder }) {
           onClick={() => {
             dispatch(setSelectedFile(file));
           }}
-          className={`select-none px-6 py-4 border-r border-b flex items-center cursor-pointer ${
+          className={`select-none pl-6 pr-8 py-4 border-r border-b flex items-center cursor-pointer ${
             selectedFile.includes(file) ? " bg-[#BBB]" : ""
           }
         `}

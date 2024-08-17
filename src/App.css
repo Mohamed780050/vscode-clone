@@ -1,5 +1,8 @@
 .centralized {
   top: 50%;
-  right: -1px;
+  right: 4px;
   transform: translate(-50%, -50%);
+}
+.theFullHeight {
+  height: calc(100% - 75.56px);
 }

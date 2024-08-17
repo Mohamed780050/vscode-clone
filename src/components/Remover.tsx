@@ -11,7 +11,7 @@ function Remover({ file }: { file: FilesAndFolder }) {
   );
   const OpenFiles = openFiles.filter((theFile) => theFile !== file);
   return (
-    <div className="ml-3 opacity-75">
+    <div className="opacity-75">
       <X
         size={15}
         className="absolute centralized cursor-pointer"

@@ -6,7 +6,7 @@ function Tabs() {
   const { openFiles } = useSelector((state: RootState) => state.files);
   return (
     <div className="min-w-full">
-      <ul className="flex overflow-x-scroll">
+      <ul className="flex overflow-x-scroll h-[75.56px]">
        {openFiles.map(file => <Mapper file={file}/>)}
       </ul>
     </div>
