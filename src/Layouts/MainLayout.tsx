@@ -8,7 +8,7 @@ function MainLayout({ children }: { children: ReactNode }) {
         <Panel minSize={25}>
           <NavBar />
         </Panel>
-        <PanelResizeHandle className="w-0.5 bg-[#1f1f1f]" />
+        <PanelResizeHandle className="w-0.5 bg-[#1f1f1f] hover:bg-blue-800 duration-200" />
         <Panel>{children}</Panel>
       </PanelGroup>
     </div>
