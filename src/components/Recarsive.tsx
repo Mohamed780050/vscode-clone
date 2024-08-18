@@ -36,7 +36,7 @@ function Recarsive({
                 </span>
               }
             >
-              <li key={++TheID}>
+              <li key={++TheID} className="text-nowrap">
                 <div className="flex items-center space-x-1 cursor-pointer text-lg">
                   <FolderIcon name={file.title} />
                   <span className="select-none">{file.title}</span>
