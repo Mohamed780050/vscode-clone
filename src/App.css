@@ -27,3 +27,6 @@
   background-color: #484444;
   opacity: 0.5;
 }
+.contentScroll::-webkit-scrollbar-corner {
+  background-color: transparent; /* Make it transparent or match the background color */
+}
