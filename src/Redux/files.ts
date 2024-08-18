@@ -174,6 +174,7 @@ print("this is a second line")`,
   ],
   openFiles: [],
   selectedFile: [],
+  openSequence: [],
 };
 export const files = createSlice({
   name: "files",
@@ -191,6 +192,9 @@ export const files = createSlice({
     removeSelectedFile: (state, action: PayloadAction<FilesAndFolder[]>) => {
       state.selectedFile = action.payload;
     },
+    setOpenSequence: (state, action: PayloadAction<FilesAndFolder[]>) => {
+      state.openSequence = action.payload;
+    },
   },
 });
 export const {
@@ -198,5 +202,6 @@ export const {
   setSelectedFile,
   removeFormOpenFiles,
   removeSelectedFile,
+  setOpenSequence,
 } = files.actions;
 export default files.reducer;

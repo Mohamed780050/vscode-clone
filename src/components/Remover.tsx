@@ -1,12 +1,17 @@
 import { FilesAndFolder } from "@/Interfaces/interfaces";
-import { removeFormOpenFiles, removeSelectedFile } from "@/Redux/files";
+import {
+  removeFormOpenFiles,
+  removeSelectedFile,
+  setOpenSequence,
+  setSelectedFile,
+} from "@/Redux/files";
 import { RootState } from "@/Redux/store";
 import { X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 
 function Remover({ file }: { file: FilesAndFolder }) {
   const dispatch = useDispatch();
-  const { openFiles, selectedFile } = useSelector(
+  const { openFiles, selectedFile, openSequence } = useSelector(
     (state: RootState) => state.files
   );
   const OpenFiles = openFiles.filter((theFile) => theFile !== file);
@@ -18,7 +23,10 @@ function Remover({ file }: { file: FilesAndFolder }) {
         onClick={(e) => {
           e.stopPropagation();
           dispatch(removeFormOpenFiles(OpenFiles));
+          const OpenSequence = openSequence.filter((item) => item !== file);
+          dispatch(setOpenSequence(OpenSequence));
           if (selectedFile.includes(file)) dispatch(removeSelectedFile([]));
+          dispatch(setSelectedFile(OpenSequence[OpenSequence.length - 1]));
         }}
       />
     </div>
