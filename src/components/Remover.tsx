@@ -11,11 +11,12 @@ function Remover({ file }: { file: FilesAndFolder }) {
   );
   const OpenFiles = openFiles.filter((theFile) => theFile !== file);
   return (
-    <div className="opacity-75">
+    <div className="opacity-75 flex items-center justify-center">
       <X
         size={15}
-        className="absolute centralized cursor-pointer"
-        onClick={() => {
+        className=" cursor-pointer hover:bg-[]"
+        onClick={(e) => {
+          e.stopPropagation();
           dispatch(removeFormOpenFiles(OpenFiles));
           if (selectedFile.includes(file)) dispatch(removeSelectedFile([]));
         }}
