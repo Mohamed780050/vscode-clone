@@ -4,5 +4,26 @@
   transform: translate(-50%, -50%);
 }
 .theFullHeight {
-  height: calc(100% - 75.56px);
+  height: calc(100% - 62.22px);
+}
+
+.theElementWithScrollX::-webkit-scrollbar {
+  height: 5px;
+}
+.theElementWithScrollX::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.theElementWithScrollX::-webkit-scrollbar-thumb {
+  background-color: #484444;
+  opacity: 0.5;
+}
+.contentScroll::-webkit-scrollbar {
+  height: auto;
+}
+.contentScroll::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.contentScroll::-webkit-scrollbar-thumb {
+  background-color: #484444;
+  opacity: 0.5;
 }
