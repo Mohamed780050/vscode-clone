@@ -12,7 +12,7 @@ function MainLayout({ children }: MyChildren) {
     <>
       <div className="h-screen hidden md:flex">
         <PanelGroup autoSaveId="persistence" direction="horizontal">
-          <Panel minSize={25}>
+          <Panel>
             <NavBar />
           </Panel>
           <PanelResizeHandle className="w-0.5 bg-[#1f1f1f] hover:bg-blue-800 duration-200" />
