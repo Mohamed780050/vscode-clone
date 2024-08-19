@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { ReactNode } from "react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-function MainLayout({ children }: { children: ReactNode }) {
+interface MyChildren {
+  children: ReactNode;
+}
+function MainLayout({ children }: MyChildren) {
   return (
     <>
       <div className="h-screen hidden md:flex">
