@@ -1,7 +1,7 @@
 import { FilesAndFolder } from "@/Interfaces/interfaces";
 import FileIcon from "./FileIcon";
 import { useDispatch, useSelector } from "react-redux";
-import { setOpenSequence, setSelectedFile } from "@/Redux/files";
+import { setOpenSequence, setSelectedFile, setToRemove } from "@/Redux/files";
 import { RootState } from "@/Redux/store";
 import Remover from "./Remover";
 
@@ -15,6 +15,7 @@ function Mapper({ file }: { file: FilesAndFolder }) {
     <>
       <li
         key={file.id * 2}
+        onContextMenu={() => dispatch(setToRemove([file]))}
         id={`${file.id}`}
         onClick={() => {
           dispatch(setSelectedFile(file));

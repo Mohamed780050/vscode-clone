@@ -3,6 +3,7 @@ export interface NavBarItems {
   openFiles: FilesAndFolder[] | [];
   selectedFile: FilesAndFolder[];
   openSequence: FilesAndFolder[];
+  toRemove: FilesAndFolder[];
 }
 
 export interface FilesAndFolder {
