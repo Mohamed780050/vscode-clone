@@ -7,8 +7,6 @@ function FolderIcon({ name }: FolderIconProps) {
       return <img src="/icons/folder-src.svg" alt="" className="w-5 h-5" />;
     case "node_modules":
       return <img src="/icons/folder-node.svg" alt="" className="w-5 h-5" />;
-    case "assets":
-      return <img src="/icons/folder-node.svg" alt="" className="w-5 h-5" />;
     case "components":
       return (
         <img src="/icons/folder-components.svg" alt="" className="w-5 h-5" />

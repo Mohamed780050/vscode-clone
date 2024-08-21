@@ -51,14 +51,31 @@ const initialState: NavBarItems = {
                   id: ++theID,
                   title: "Button.tsx",
                   isFolder: false,
-                  content: ``,
+                  content: `import { ReactNode } from "react";
+
+interface Mybutton {
+  children: ReactNode;
+  className: string;
+}
+function Button({ children, className = "" }: Mybutton) {
+  return <button className={className}>{children}</button>;
+}
+export default Button;`,
                   children: null,
                 },
                 {
                   id: ++theID,
                   title: "Input.tsx",
                   isFolder: false,
-                  content: ``,
+                  content: `import { forwardRef } from "react";
+
+interface Myinput {
+  className: string;
+}
+function Input({  className = "" }: Myinput) {
+  return <input className={className}/>;
+}
+export default forwardRef(Input);`,
                   children: null,
                 },
               ],
@@ -207,6 +224,6 @@ export const {
   removeFormOpenFiles,
   removeSelectedFile,
   setOpenSequence,
-  setToRemove
+  setToRemove,
 } = files.actions;
 export default files.reducer;
