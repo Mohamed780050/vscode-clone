@@ -1,6 +1,7 @@
 import { RootState } from "@/Redux/store";
 import { useSelector } from "react-redux";
 import WelcomePage from "./WelcomePage";
+import SyntaxHighlaughter from "./SyntaxHighlaughter";
 
 function FileContent() {
   const { selectedFile,openFiles } = useSelector((state: RootState) => state.files);
@@ -15,7 +16,7 @@ function FileContent() {
               <span className="px-2 py-0.5 min-w-10 text-center select-none">
                 {index + 1}
               </span>
-              <pre className="pl-1 w-full text-left ">{line}</pre>
+              <pre className="pl-1 w-full text-left "><SyntaxHighlaughter content={line}/></pre>
             </li>
           ))}
         </ol>

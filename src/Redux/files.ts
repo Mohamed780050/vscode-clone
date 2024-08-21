@@ -52,7 +52,6 @@ const initialState: NavBarItems = {
                   title: "Button.tsx",
                   isFolder: false,
                   content: `import { ReactNode } from "react";
-
 interface Mybutton {
   children: ReactNode;
   className: string;
@@ -68,7 +67,6 @@ export default Button;`,
                   title: "Input.tsx",
                   isFolder: false,
                   content: `import { forwardRef } from "react";
-
 interface Myinput {
   className: string;
 }
