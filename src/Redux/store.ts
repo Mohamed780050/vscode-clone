@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import files from "./files";
+import contextmenu from "./contextmenu";
 // ...
 
 export const store = configureStore({
   reducer: {
-    files:files
+    files: files,
+    contextmenu: contextmenu,
   },
 });
 
