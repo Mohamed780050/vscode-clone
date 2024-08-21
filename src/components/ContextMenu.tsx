@@ -3,12 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button } from "./ui/button";
 import { removeFormOpenFiles } from "@/Redux/files";
 import { setShow } from "@/Redux/contextmenu";
-
+import { useEffect } from "react";
 function ContextMenu() {
   const { position } = useSelector((state: RootState) => state.contextmenu);
   const dispatch = useDispatch();
+  function showit() {
+    dispatch(setShow(false));
+  }
+  useEffect(() => {
+    window.addEventListener("click", showit);
+    return () => window.removeEventListener("click", showit);
+  }, []);
   return (
     <div
+      onContextMenu={() => dispatch(setShow(false))}
       className={`absolute bg-[#181818] p-2 rounded`}
       style={{ left: position.x, top: position.y }}
     >
@@ -17,6 +25,7 @@ function ContextMenu() {
           dispatch(removeFormOpenFiles([]));
           dispatch(setShow(false));
         }}
+        onContextMenu={() => dispatch(setShow(false))}
       >
         Close all
       </Button>

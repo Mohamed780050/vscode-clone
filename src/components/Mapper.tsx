@@ -4,16 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setOpenSequence, setSelectedFile } from "@/Redux/files";
 import { RootState } from "@/Redux/store";
 import Remover from "./Remover";
-import { useEffect } from "react";
-import { setShow } from "@/Redux/contextmenu";
+
 function Mapper({ file }: { file: FilesAndFolder }) {
   const dispatch = useDispatch();
   const { selectedFile, openSequence } = useSelector(
     (state: RootState) => state.files
   );
-  useEffect(() => {
-    window.addEventListener("click", () => dispatch(setShow(false)));
-  }, []);
+
   return (
     <>
       <li
