@@ -1,7 +1,11 @@
 import { RootState } from "@/Redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "./ui/button";
-import { removeFormOpenFiles, setOpenSequence } from "@/Redux/files";
+import {
+  removeFormOpenFiles,
+  setOpenSequence,
+  setSelectedFile,
+} from "@/Redux/files";
 import { setShow } from "@/Redux/contextmenu";
 import { useEffect } from "react";
 function ContextMenu() {
@@ -32,6 +36,7 @@ function ContextMenu() {
           dispatch(removeFormOpenFiles([...OpenFiles]));
           dispatch(setOpenSequence(OpenSequence));
           dispatch(setShow(false));
+          dispatch(setSelectedFile(OpenSequence[OpenSequence.length - 1]));
         }}
       >
         Close
