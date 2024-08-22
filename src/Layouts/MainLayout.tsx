@@ -6,20 +6,24 @@ import { Menu } from "lucide-react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 
 function MainLayout() {
+  console.log(window.innerWidth);
   return (
     <>
-      <div className="h-screen hidden md:flex">
-        <PanelGroup autoSaveId="persistence" direction="horizontal">
+      <div className="h-screen">
+        <PanelGroup
+          autoSaveId="persistence"
+          direction="horizontal"
+          className="block md:flex"
+          style={{ display: `${window.innerWidth < 768 ? "bolck" : "flex"}` }}
+        >
           <Panel>
-            <NavBar />
+            <NavBar className="hidden md:block" />
           </Panel>
-          <PanelResizeHandle className="w-0.5 bg-[#1f1f1f] hover:bg-blue-800 duration-200" />
+          <PanelResizeHandle className="w-0.5 hidden md:block bg-[#1f1f1f] hover:bg-blue-800 duration-200" />
           <Panel>
             <Content />
           </Panel>
         </PanelGroup>
-      </div>
-      <div className="h-screen md:hidden">
         <span className="absolute bottom-3 left-6">
           <SheetDemo>
             <Button className="absolute w-fit h-fit bg-gray-700">
@@ -27,7 +31,6 @@ function MainLayout() {
             </Button>
           </SheetDemo>
         </span>
-        <Content />
       </div>
     </>
   );
