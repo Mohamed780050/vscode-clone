@@ -41,7 +41,7 @@ function Recarsive({ fileChildren }: { fileChildren: FilesAndFolder[] }) {
               key={++TheID}
               onClick={() => {
                 dispatch(setSelectedFile(file));
-                if (openFiles.filter(itme => itme === file)) return "";
+                if (openFiles.filter(item => item === file).length) return "";
                 const OpenSequence = openSequence.filter(
                   (item) => item !== file
                 );
