@@ -1,13 +1,11 @@
+import Content from "@/components/Content";
 import NavBar from "@/components/NavBar";
 import { SheetDemo } from "@/components/SheetDemo";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { ReactNode } from "react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
-interface MyChildren {
-  children: ReactNode;
-}
-function MainLayout({ children }: MyChildren) {
+
+function MainLayout() {
   return (
     <>
       <div className="h-screen hidden md:flex">
@@ -16,7 +14,9 @@ function MainLayout({ children }: MyChildren) {
             <NavBar />
           </Panel>
           <PanelResizeHandle className="w-0.5 bg-[#1f1f1f] hover:bg-blue-800 duration-200" />
-          <Panel>{children}</Panel>
+          <Panel>
+            <Content />
+          </Panel>
         </PanelGroup>
       </div>
       <div className="h-screen md:hidden">
@@ -27,7 +27,7 @@ function MainLayout({ children }: MyChildren) {
             </Button>
           </SheetDemo>
         </span>
-        {children}
+        <Content />
       </div>
     </>
   );
