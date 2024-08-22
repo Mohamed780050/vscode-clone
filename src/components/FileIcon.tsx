@@ -3,7 +3,7 @@ interface FileiconProps {
   name: string;
 }
 function FileIcon({ name }: FileiconProps) {
-  const exetention = name.split(".")
+  const exetention = name.split(".");
   return (
     <div>
       <Image extention={`${exetention[1]}`} />
